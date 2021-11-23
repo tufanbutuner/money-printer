@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-const key = process.env.API_KEY;
-const privKey = process.env.API_PRIVATE_KEY;
+require("dotenv").config({ path: "../.env" });
+const key = process.env.REACT_APP_API_KEY;
+const privKey = process.env.REACT_APP_API_PRIVATE_KEY;
 const KrakenClient = require("kraken-api");
 const kraken = new KrakenClient(key, privKey);
 
